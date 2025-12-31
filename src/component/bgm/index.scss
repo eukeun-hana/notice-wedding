@@ -1,8 +1,7 @@
 .bgm-floating {
   position: fixed;      /* 🔥 핵심 */
   top: 16px;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 16px;
 
   z-index: 99999;       /* 카드/모달 위 */
   pointer-events: auto;

@@ -13,7 +13,6 @@ function App() {
     <>
     <BGM />
     <div className="background">
-      <BGEffect />
       <div className="card-view">
         
         <LazyDiv className="card-group">
