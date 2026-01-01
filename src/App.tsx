@@ -3,6 +3,7 @@ import "./App.scss"
 import { Invitation } from "./component/invitation"
 import { BGEffect } from "./component/bgEffect"
 import { Gallery } from "./component/gallery"
+import { GalleryThum } from "./component/galleryThumnail"
 import { LazyDiv } from "./component/lazyDiv"
 import GuestBook from "./component/guestbook"
 import { ShareButton } from "./component/shareButton"
@@ -24,10 +25,12 @@ function App() {
 
         <LazyDiv className="card-group">
           {/* 갤러리 */}
-          <Gallery />
+          <GalleryThum />
           {/* 방명록 */}
           <GuestBook />
         </LazyDiv>
+
+        
         <ShareButton />
       </div>
     </div>
