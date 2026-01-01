@@ -43,16 +43,17 @@ export const GalleryThum = () => {
       {/* 확대 뷰어 (전역 모달 아님) */}
       {viewerIndex !== null && (
         <div className="photo-viewer-overlay" onClick={() => setViewerIndex(null)}>
-          <div className="carousel-control">
-            <div className="control left" onClick={(e) => { e.stopPropagation(); prevImage()}}>
-                <ArrowLeft className="arrow" />
-            </div>
-            <img
+          <img
               src={GALLERY_FULL[viewerIndex]}
               className="photo-viewer-image"
               onClick={(e) => e.stopPropagation()}
               decoding="async"
             />
+          <div className="carousel-control">
+            <div className="control left" onClick={(e) => { e.stopPropagation(); prevImage()}}>
+                <ArrowLeft className="arrow" />
+            </div>
+            
             <div className="control right" onClick={(e) => { e.stopPropagation(); nextImage()}}>
                 <ArrowLeft className="arrow right" />
             </div>
