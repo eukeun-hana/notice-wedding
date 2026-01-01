@@ -24,12 +24,12 @@ export const COVER_IMAGE = coverImage
 
 export const GALLERY_IMAGES = [
   image1,
-  /*image2,
+  image2,
   image3,
   image4,
   image5,
   image6,
-  image7,*/
+  image7,
   image8,
   image9,
   image10,
@@ -39,8 +39,8 @@ export const GALLERY_IMAGES = [
   image14,
   image15,
   image16,
-  /*image17,
+  image17,
   image18,
   image19,
-  image20,*/
+  image20,
 ]

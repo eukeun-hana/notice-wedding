@@ -17,6 +17,7 @@ import {
 } from "firebase/firestore"
 import { db } from "../../firebase"
 
+//firestore 구조와 맞춤
 type Post = {
   id: string
   name: string
@@ -28,12 +29,14 @@ type Post = {
 export default function GuestBook() {
   const { openModal, closeModal } = useModal()
   const [posts, setPosts] = useState<Post[]>([])
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
 
   const loadPosts = async () => {
     const q = query(
       collection(db, "guestbook"),
       orderBy("createdAt", "desc"),
-      limit(4),
+      limit(3), //최근 방명록 4개까지
     )
 
     const snap = await getDocs(q)
@@ -49,6 +52,7 @@ export default function GuestBook() {
     )
   }
 
+  //최초 방명록 로드
   useEffect(() => {
     loadPosts()
   }, [])
@@ -101,7 +105,7 @@ export default function GuestBook() {
             <div className="title">
               <div className="name">{post.name}</div>
               <div className="date">
-                {dayjs.unix(post.timestamp).format("YYYY-MM-DD HH:MM")}
+                {dayjs.unix(post.timestamp).format("YYYY-MM-DD HH:mm")}
               </div>
             </div>
             <div className="content">{post.content}</div>
@@ -124,20 +128,27 @@ export default function GuestBook() {
                 </div>
               </div>
             ),
-            content: <WriteGuestBookModal loadPosts={loadPosts} />,
+            content: (
+              <WriteGuestBookModal
+                loadPosts={loadPosts}
+                setIsSubmitting={setIsSubmitting}
+              />
+            ),
             footer: (
               <>
                 <Button
                   buttonStyle="style2"
                   type="submit"
                   form="guestbook-write-form"
+                  disabled={isSubmitting}
                 >
-                  저장하기
+                  {isSubmitting ? "등록 중..." : "저장하기"}
                 </Button>
                 <Button
                   buttonStyle="style2"
                   className="bg-light-grey-color text-dark-color"
                   onClick={closeModal}
+                  disabled={isSubmitting}
                 >
                   닫기
                 </Button>
@@ -180,7 +191,13 @@ export default function GuestBook() {
   )
 }
 
-const WriteGuestBookModal = ({ loadPosts }: { loadPosts: () => void }) => {
+const WriteGuestBookModal = ({ 
+  loadPosts, 
+  setIsSubmitting,
+}: { 
+  loadPosts: () => void 
+  setIsSubmitting: (v: boolean) => void
+}) => {
   const inputRef = useRef<any>({})
   const { closeModal } = useModal()
 
@@ -190,6 +207,7 @@ const WriteGuestBookModal = ({ loadPosts }: { loadPosts: () => void }) => {
       className="form"
       onSubmit={async (e) => {
         e.preventDefault()
+        setIsSubmitting(true)
 
         const name = inputRef.current.name.value.trim()
         const content = inputRef.current.content.value.trim()
@@ -197,14 +215,38 @@ const WriteGuestBookModal = ({ loadPosts }: { loadPosts: () => void }) => {
 
         if (!name) {
           alert("이름을 입력해주세요.")
+          setIsSubmitting(false)
           return
         }
         if (!content) {
           alert("내용을 입력해주세요.")
+          setIsSubmitting(false)
           return
         }
         if (password.length < 4) {
           alert("비밀번호를 4자 이상 입력해주세요.")
+          setIsSubmitting(false)
+          return
+        }
+
+        // 최근 방명록 5개 조회
+        const q = query(
+          collection(db, "guestbook"),
+          orderBy("createdAt", "desc"),
+          limit(5),
+        )
+
+        const snap = await getDocs(q)
+
+        // 이름 + 내용이 같은 방명록이 있는지 확인
+        const duplicated = snap.docs.some((d) => {
+          const data = d.data()
+          return data.name === name && data.content === content
+        })
+
+        if (duplicated) {
+          alert("같은 내용의 방명록이 이미 등록되어 있습니다.")
+          setIsSubmitting(false)
           return
         }
 
@@ -217,6 +259,7 @@ const WriteGuestBookModal = ({ loadPosts }: { loadPosts: () => void }) => {
         })
 
         alert("방명록 작성이 완료되었습니다.")
+        setIsSubmitting(false)
         closeModal()
         loadPosts()
       }}
@@ -357,7 +400,7 @@ const AllGuestBookModal = ({
             <div className="title">
               <div className="name">{post.name}</div>
               <div className="date">
-                {dayjs.unix(post.timestamp).format("YYYY-MM-DD HH:MM")}
+                {dayjs.unix(post.timestamp).format("YYYY-MM-DD HH:mm")}
               </div>
             </div>
             <div className="content">{post.content}</div>
