@@ -1,8 +1,7 @@
 import coverImage from "./cover.png"
 //썸네일
 import t1 from "./thumb/image1.webp"
-//import t2 from "./thumb/image2.webp"
-import t2 from "./thumb/blank.png"
+import t2 from "./thumb/image2.webp"
 import t3 from "./thumb/image3.webp"
 import t4 from "./thumb/image4.webp"
 import t5 from "./thumb/image5.webp"
@@ -24,7 +23,7 @@ import t20 from "./thumb/image20.webp"
 
 //확대용
 import f1 from "./image1.webp"
-import f2 from "./blank.png"
+import f2 from "./image2.webp"
 import f3 from "./image3.webp"
 import f4 from "./image4.webp"
 import f5 from "./image5.webp"
@@ -46,7 +45,7 @@ import f20 from "./image20.webp"
 
 //확대용
 import image1 from "./image1.png" //보정 요청
-import image2 from "./blank.png" //보정 요청
+import image2 from "./image2.png" //보정 요청
 import image3 from "./image3.png" //보정 요청
 import image4 from "./image4.png" //보정 요청
 import image5 from "./image5.png" //보정 요청
