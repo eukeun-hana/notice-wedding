@@ -132,6 +132,7 @@ export const Invitation = () => {
       >
         연락하기
       </Button>
+      <div className="break" />
     </LazyDiv>
   )
 }

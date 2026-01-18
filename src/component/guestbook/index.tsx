@@ -186,6 +186,7 @@ export default function GuestBook() {
       >
         방명록 전체보기
       </Button>
+      <div className="break" />
     </LazyDiv>
   )
 }
