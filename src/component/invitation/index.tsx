@@ -23,8 +23,6 @@ export const Invitation = () => {
     <LazyDiv className="card invitation">
       <h2 className="english">Notice</h2>
 
-      <div className="break" />
-
       <div className="content">함께하는 여덟 번째 봄에</div>
       <div className="content">서로의 인생을 품으려 합니다.</div>
       <div className="break" />
@@ -52,9 +50,9 @@ export const Invitation = () => {
         </span>{" "}
         {BRIDE_FULLNAME}
       </div>
-
+      
       <div className="break" />
-
+      
       <Button
         onClick={() => {
           openModal({

@@ -29,7 +29,7 @@ export const Cover = () => {
         <div className="divider" />
         {BRIDE_FULLNAME}
       </div>
-      <div className="info">{WEDDING_DATE.format(WEDDING_DATE_FORMAT)}</div>
+      {/*<div className="info">{WEDDING_DATE.format(WEDDING_DATE_FORMAT)}</div>*/}
     </LazyDiv>
   )
 }

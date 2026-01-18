@@ -9,7 +9,9 @@ import { LazyDiv } from "../lazyDiv"
 import { useKakao } from "../store"
 
 const baseUrl = import.meta.env.BASE_URL
-
+console.log("protocol ::: " + window.location.protocol);
+console.log("host ::: " + window.location.host);
+console.log("url ::: " + baseUrl);
 export const ShareButton = () => {
   const kakao = useKakao()
   return (
@@ -26,7 +28,8 @@ export const ShareButton = () => {
             content: {
               title: `${GROOM_FULLNAME} ❤️ ${BRIDE_FULLNAME} 결혼합니다.`,
               description:
-                WEDDING_DATE.format(WEDDING_DATE_FORMAT),
+                //WEDDING_DATE.format(WEDDING_DATE_FORMAT),
+                "",
               imageUrl:
                 window.location.protocol +
                 "//" +

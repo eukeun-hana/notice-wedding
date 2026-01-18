@@ -1,0 +1,4 @@
+#썸네일
+magick mogrify -path thumb -resize 300x -format webp original/*.jpg
+#확대
+magick image16.png -auto-orient -resize 1200x -quality 85 image16.webp
