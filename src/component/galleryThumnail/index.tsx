@@ -20,7 +20,7 @@ export const GalleryThum = () => {
     <>
       <LazyDiv className="card gallery">
         <h2 className="english">Gallery</h2>
-
+        <div className="break" />
         <div className="gallery-grid">
           {GALLERY_THUMBS.map((thumb, idx) => (
             <div
