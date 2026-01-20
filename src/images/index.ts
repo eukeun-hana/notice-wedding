@@ -23,24 +23,24 @@ import t18 from "./thumb/image18.webp"
 //블랭크
 import b from "./blank.png"
 //확대용
-import f1 from "./image1.webp" //확정
-import f2 from "./image2.webp" //확정
-import f3 from "./image3.webp" //확정
-import f4 from "./image4.webp"
-import f5 from "./image5.webp"
-import f6 from "./image6.webp"
-import f7 from "./image7.webp"
-import f8 from "./image8.webp" //확정
-import f9 from "./image9.webp" //확정
-import f10 from "./image10.webp" //확정
-import f11 from "./image11.webp"
-import f12 from "./image12.webp" //확정
-import f13 from "./image13.webp" //확정
-import f14 from "./image14.webp" //확정
-import f15 from "./image15.webp" //확정
-import f16 from "./image16.webp" //확정
-import f17 from "./image17.webp"
-import f18 from "./image18.webp"
+import f1 from "./full/image1.webp" //확정
+import f2 from "./full/image2.webp" //확정
+import f3 from "./full/image3.webp" //확정
+import f4 from "./full/image4.webp"
+import f5 from "./full/image5.webp"
+import f6 from "./full/image6.webp"
+import f7 from "./full/image7.webp"
+import f8 from "./full/image8.webp" //확정
+import f9 from "./full/image9.webp" //확정
+import f10 from "./full/image10.webp" //확정
+import f11 from "./full/image11.webp"
+import f12 from "./full/image12.webp" //확정
+import f13 from "./full/image13.webp" //확정
+import f14 from "./full/image14.webp" //확정
+import f15 from "./full/image15.webp" //확정
+import f16 from "./full/image16.webp" //확정
+import f17 from "./full/image17.webp"
+import f18 from "./full/image18.webp"
 
 
 export const COVER_IMAGE = coverImage
