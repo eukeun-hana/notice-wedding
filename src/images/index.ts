@@ -63,7 +63,11 @@ export const GALLERY_THUMBS = [
   //t15,
   t16,
   t17,
-  t18
+  t18,
+  b,
+  b,
+  b,
+  b
 ]
 
 export const GALLERY_FULL = [
@@ -84,6 +88,10 @@ export const GALLERY_FULL = [
   //f15,
   f16,
   f17,
-  f18
+  f18,
+  b,
+  b,
+  b,
+  b
 ]
 
