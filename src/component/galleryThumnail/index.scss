@@ -129,8 +129,10 @@
 .photo-viewer-overlay,
 .photo-viewer-image {
   scrollbar-width: none; /* Firefox */
+  touch-action: pan-y;
 }
 .photo-viewer-overlay::-webkit-scrollbar,
 .photo-viewer-image::-webkit-scrollbar {
   display: none; /* Chrome/Safari */
+  touch-action: pan-y;
 }
