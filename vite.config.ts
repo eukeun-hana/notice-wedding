@@ -8,8 +8,8 @@ import { createHtmlPlugin } from "vite-plugin-html"
 import {
   GROOM_FULLNAME,
   BRIDE_FULLNAME,
-  WEDDING_DATE,
-  WEDDING_DATE_FORMAT,
+  //WEDDING_DATE,
+  //WEDDING_DATE_FORMAT,
 } from "./src/const"
 
 const distFolder = "build"
