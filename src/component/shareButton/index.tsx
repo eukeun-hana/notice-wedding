@@ -2,7 +2,7 @@ import {
   BRIDE_FULLNAME,
   GROOM_FULLNAME, 
   //WEDDING_DATE,
-  //WEDDING_DATE_FORMAT,
+  //WEDDING_DATE_FORMAT, 
 } from "../../const"
 import ktalkIcon from "../../icons/ktalk-icon.png"
 import { LazyDiv } from "../lazyDiv"
